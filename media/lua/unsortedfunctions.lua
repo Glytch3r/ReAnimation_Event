@@ -62,9 +62,6 @@ end
 
 function isImmortal() 
 end
-function setImmortal() 
- Events.OnPlayerUpdate.Add(disableMoodle)
-end
 
 
 ------------------------     scarecrow          ---------------------------
@@ -114,12 +111,79 @@ function disableFallDmg(playerZed)
 	
 end
 
+function ImmortalFunction(playerZed)
+	
+end
 
 function playerZedHandler(playerZed)
 	if not isPlayerZed() then return end
 	disableFallDmg(playerZed)
 	disableMoodle(playerZed)
+	if isPlayerZed():getModData().isImmortal then
+		ImmortalFunction(playerZed)
+	end
 end
 
 Events.OnPlayerUpdate.Add(playerZedHandler)
 
+------------------------      heal         ---------------------------
+function HealingBuff(ticks)
+    if ticks % 10 == 0 then   
+		local player = getPlayer() 
+        if player:isGodMod() then  player:setGodMod(false) end
+        local body = player:getBodyDamage()
+        local hp =  body:getOverallBodyHealth()
+		local stats = player:getStats()
+        local heal = 10
+        body:AddGeneralHealth(hp+heal)        
+
+        local bodyDamage = player:getBodyDamage();
+        local bodyParts = bodyDamage:getBodyParts();
+		stats:setHunger(0);
+		stats:setEndurance(1)
+		stats:setFatigue(1);
+		stats:setBoredom(0)    
+		stats:setSickness(0)
+		stats:setThirst(0)
+		stats:setFear(0)    
+		stats:setStress(0);
+		stats:setDrunkenness(0)
+		bodyDamage:setColdStrength(0)
+		bodyDamage:setWetness(0)
+		bodyDamage:setFoodSicknessLevel(0);
+		bodyDamage:setPoisonLevel(0) 
+		bodyDamage:setUnhappynessLevel(0)
+		bodyDamage:setInfected(false);
+		bodyDamage:setHasACold(false);
+		bodyDamage:setInfectionMortalityDuration(-1);
+		bodyDamage:setInfectionTime(-1);
+		bodyDamage:setInfectionLevel(0);
+		bodyDamage:setInfectionGrowthRate(0);    
+		bodyDamage:setFakeInfectionLevel(0);
+		if player:isOnFire() then
+			if isClient() then
+				player:sendStopBurning();
+			else
+				player:StopBurning()
+			end
+		end
+        for i=bodyParts:size()-1, 0, -1  do
+            local bodyPart = bodyParts:get(i);
+            bodyPart:SetInfected(false);
+            bodyPart:setInfectedWound(false);
+            bodyPart:SetFakeInfected(false);
+            bodyPart:setWoundInfectionLevel(0);    
+            bodyPart:setDeepWoundTime(0)
+			bodyPart:setScratchTime(0)
+            bodyPart:setDeepWounded(false)
+            bodyPart:setBleedingTime(0)
+            bodyPart:setBurnTime(0)
+            bodyPart:SetBitten(false);
+            bodyPart:setFractureTime(0)
+            player:getFitness():removeStiffnessValue(BodyPartType.ToString(bodyPart:getType()))
+            bodyPart:setScratchTime(0)
+            bodyPart:setCutTime(0)
+        end
+    end
+end 
+Events.OnTick.Add(HealingBuff) 
