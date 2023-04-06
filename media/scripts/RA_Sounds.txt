@@ -1,0 +1,125 @@
+
+
+module Base
+{
+/* 
+assets are from konijimas event mod, i have permssion from him to take anything from his work 
+but i dont have permission from the game where he ripped the audio so we may need to replace this
+ */
+sound ScaryRA
+{
+category = UI,
+clip { file = media/sound/Volatiles/volatile1.ogg,   distanceMax = 1500, is3D = true, volume = 0.40, }
+clip { file = media/sound/Volatiles/volatile2.ogg,   distanceMax = 1500, is3D = true, volume = 0.40, }
+clip { file = media/sound/Volatiles/volatile3.ogg,   distanceMax = 1500, is3D = true, volume = 0.40, }
+clip { file = media/sound/Volatiles/volatile4.ogg,   distanceMax = 1500, is3D = true, volume = 0.40, }
+clip { file = media/sound/Volatiles/volatile5.ogg,   distanceMax = 1500, is3D = true, volume = 0.40, }
+clip { file = media/sound/Volatiles/volatile6.ogg,   distanceMax = 1500, is3D = true, volume = 0.40, }
+clip { file = media/sound/Volatiles/volatile7.ogg,   distanceMax = 1500, is3D = true, volume = 0.40, }
+clip { file = media/sound/InfectedM/InfectedM1.ogg,    distanceMax = 1500, is3D = true, volume = 0.40, }
+clip { file = media/sound/InfectedM/InfectedM2.ogg,    distanceMax = 1500, is3D = true, volume = 0.40, }
+clip { file = media/sound/InfectedM/InfectedM2.ogg,    distanceMax = 1500, is3D = true, volume = 0.40, }
+clip { file = media/sound/InfectedF/InfectedF1.ogg,    distanceMax = 1500, is3D = true, volume = 0.40, }
+clip { file = media/sound/InfectedF/InfectedF2.ogg,    distanceMax = 1500, is3D = true, volume = 0.40, }
+clip { file = media/sound/InfectedF/InfectedF3.ogg,    distanceMax = 1500, is3D = true, volume = 0.40, }
+clip { file = media/sound/InfectedS/InfectedSpawn1.ogg,   distanceMax = 1500, is3D = true, volume = 0.40, }
+clip { file = media/sound/InfectedS/InfectedSpawn2.ogg,   distanceMax = 1500, is3D = true, volume = 0.40, }
+clip { file = media/sound/InfectedS/InfectedSpawn3.ogg,   distanceMax = 1500, is3D = true, volume = 0.40, }
+}
+sound UIClickToStart
+{
+category = UI,		
+clip { file = media/sound/Volatiles/volatile7.ogg,   distanceMax = 1500, is3D = true, volume = 0.40, }
+}
+
+
+sound RA_SFX1
+{
+category = UI,		
+clip { file = media/sound/Volatiles/volatile1.ogg,   distanceMax = 1500, is3D = true, volume = 0.40, }
+}
+sound RA_SFX2
+{
+category = UI,		
+clip { file = media/sound/Volatiles/volatile2.ogg,   distanceMax = 1500, is3D = true, volume = 0.40, }
+}
+sound RA_SFX3
+{
+category = UI,		
+clip { file = media/sound/Volatiles/volatile3.ogg,   distanceMax = 1500, is3D = true, volume = 0.40, }
+}
+
+sound RA_SFX4
+{
+category = UI,		
+clip { file = media/sound/Volatiles/volatile4.ogg,   distanceMax = 1500, is3D = true, volume = 0.40, }
+}
+sound RA_SFX5
+{
+category = UI,		
+clip { file = media/sound/Volatiles/volatile5.ogg,   distanceMax = 1500, is3D = true, volume = 0.40, }
+}
+sound RA_SFX6
+{
+category = UI,		
+clip { file = media/sound/Volatiles/volatile6.ogg,   distanceMax = 1500, is3D = true, volume = 0.40, }
+}
+
+sound RA_SFX7
+{
+category = UI,		
+clip { file = media/sound/Volatiles/volatile7.ogg,   distanceMax = 1500, is3D = true, volume = 0.40, }
+}
+sound RAs1
+{
+category = UI,
+ clip { file = media/sound/InfectedS/InfectedSpawn1.ogg,   distanceMax = 1500, is3D = true, volume = 0.40, }
+}
+sound RAs2
+{
+category = UI,
+ clip { file = media/sound/InfectedS/InfectedSpawn2.ogg,   distanceMax = 1500, is3D = true, volume = 0.40, }
+}
+sound RAs3
+{
+category = UI,
+ clip { file = media/sound/InfectedS/InfectedSpawn3.ogg,   distanceMax = 1500, is3D = true, volume = 0.40, }
+}
+sound RAm1
+{
+category = UI,
+clip { file = media/sound/InfectedM/InfectedM1.ogg,   distanceMax = 1500, is3D = true, volume = 0.40, }
+}
+sound RAm2
+{
+category = UI,
+clip { file = media/sound/InfectedM/InfectedM2.ogg,   distanceMax = 1500, is3D = true, volume = 0.40, }
+}
+sound RAm3
+{
+category = UI,
+clip { file = media/sound/InfectedM/InfectedM3.ogg,   distanceMax = 1500, is3D = true, volume = 0.40, }
+}
+sound RAf1
+{
+category = UI,
+clip { file = media/sound/InfectedF/InfectedF1.ogg,   distanceMax = 1500, is3D = true, volume = 0.40, }
+}
+sound RAf2
+{
+category = UI,
+clip { file = media/sound/InfectedF/InfectedF2.ogg,  distanceMax = 1500, is3D = true, volume = 0.40, }
+}
+sound RAf3
+{
+category = UI,
+clip { file = media/sound/InfectedF/InfectedF3.ogg,  distanceMax = 1500, is3D = true, volume = 0.40, }
+}
+
+
+
+
+
+	
+}
+

@@ -1,0 +1,45 @@
+module Skin {
+    imports { Base }
+	
+	item Bones
+	{
+       DisplayCategory = Clothing,		
+		Type = Clothing,
+		DisplayName = Bones,
+		ClothingItem = Bones_clo,
+		BodyLocation = Torso1Legs1, 
+		Icon = Bones_ico,		
+		WorldStaticModel = WorldItems/Bones_ground,		
+	}		
+	item Scare
+	{
+       DisplayCategory = Clothing,		
+		Type = Clothing,
+		DisplayName = Scare,
+		ClothingItem = scare,
+		BodyLocation = Torso1Legs1, 
+		Icon = Bones_ico,		
+		
+	}		
+	
+	item Deformed
+	{
+       DisplayCategory = Clothing,		
+		Type = Clothing,
+		DisplayName = Deformed,
+		ClothingItem = deformed,
+		BodyLocation = Torso1Legs1, 
+		Icon = Bones_ico,		
+		
+	}		
+	item Science
+	{
+       DisplayCategory = Clothing,		
+		Type = Clothing,
+		DisplayName = Science,
+		ClothingItem = science,
+		BodyLocation = Torso1Legs1, 
+		Icon = Bones_ico,		
+		
+	}		
+}

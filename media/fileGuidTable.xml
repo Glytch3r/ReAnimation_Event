@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fileGuidTable>
+	<files>
+		<path>media/clothing/clothingItems/Bones_clo.xml</path>
+		<guid>0f44ec14-08ea-42e0-a99f-f1579b71fe92</guid>
+	</files>	
+	<files>
+		<path>media/clothing/clothingItems/scare.xml</path>
+		<guid>aab900f1-36ed-4eba-97f4-7860658d2a68</guid>
+	</files>	
+	<files>
+		<path>media/clothing/clothingItems/science.xml</path>
+		<guid>28a41d94-3e8d-4b1d-a077-c7193fbdf09b</guid>
+	</files>
+	<files>
+		<path>media/clothing/clothingItems/deformed.xml</path>
+		<guid>c64b0961-6000-4fca-8e66-d0ecbc724c78</guid>
+	</files>
+</fileGuidTable>
