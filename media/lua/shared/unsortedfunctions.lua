@@ -1,4 +1,4 @@
-
+--[[ 
 ------------------------   z types            ---------------------------
 zedTypes = {
 
@@ -21,14 +21,11 @@ zedTypes = {
 	------------------------    disable moodle           ---------------------------
 
 
-------------------------   disable fall dmg            ---------------------------
-
-
 
 function playerZedHandler(playerZed)
-	if not isPlayerZed() then return end
-	disableFallDmg(playerZed)
-	disableMoodle(playerZed)
+	if not playerZed then return end
+	--disableFallDmg(playerZed)
+--	disableMoodle(playerZed)
 	if isPlayerZed():getModData().isImmortal then
 		ImmortalFunction(playerZed)
 	end
@@ -113,19 +110,18 @@ end
 function ScareCrowMode()
 	local player = getPlayer() 
 	if not  player then return end 	
-	if not player:getModData().isBones then player:getModData().isScareCrow = true end
+	if not player:getModData().isScareCrow then player:getModData().isScareCrow = true end
 	local inv = player:getInventory() 
 	player:clearWornItems();
 	inv:clear();
 	player:resetModel();
 	local item = "Skin.Scare"
-	local equip = inv:AddItem(item);
-	--equip:getVisual():setTextureChoice(ZombRand(1,25));
+	local equip = inv:AddItem(item);	
 	player:setWornItem(equip:getBodyLocation(), equip);
 end
 
 
-
+--  getPlayer():setModData().isScareCrow = true 
 ------------------------   DEBUG            ---------------------------
 function RAContextFunc(player, context, worldobjects, test)
 
@@ -163,3 +159,4 @@ function RAContextFunc(player, context, worldobjects, test)
 end
 Events.OnFillWorldObjectContextMenu.Add(RAContextFunc)
 
+ ]]
