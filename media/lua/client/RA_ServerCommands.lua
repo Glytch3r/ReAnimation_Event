@@ -2,6 +2,7 @@ local ServerCommands = {}
 
 
 ServerCommands.ReceiveBlind = function(args)
+
     RA_PlayerDamage.Blind()
 end
 
