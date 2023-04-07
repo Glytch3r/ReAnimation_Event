@@ -8,6 +8,7 @@
 RA_Spectre = {}
 
 RA_Spectre.ToggleHide = function()
+
     local player = getPlayer()
     player:setGhostMode(not player:isGhostMode())
     sendPlayerExtraInfo(player)

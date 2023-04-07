@@ -1,8 +1,10 @@
+-- [[ Functions used by several special infected zeds--]]
+
+
 RA_CommonSpecial = {}
 
 
 
--- Used by several special infected
 RA_CommonSpecial.SetImmortal = function()
     -- TODO do it
 end
@@ -68,7 +70,7 @@ RA_CommonSpecial.RegenHealth = function(ticks)
     end
 end 
 
-RA_CommonSpecial.DisableMoodles()
+RA_CommonSpecial.DisableMoodles = function()
 	local player = getPlayer()
 	local stats = player:getStats()
 	stats:setAnger(0.0)
