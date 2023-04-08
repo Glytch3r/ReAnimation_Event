@@ -2,7 +2,7 @@
 local function isUndead() 
 	local player = getPlayer()
 	local modData = player:getModData()
-	if modData['isUndead'] == nil then modData['isUndead'] = false end
+	
 	if not modData['isUndead'] then return false or true end 
 
 end
@@ -74,7 +74,7 @@ local function RA_Admin()
 	getPlayer():setCanSeeAll(true)
 	getPlayer():setNetworkTeleportEnabled(true)
 	--getPlayer():setShowMPInfos(false)
-	lvlup()
+	
 	SendCommandToServer(string.format("/removezombies -remove true"))
 end
 
@@ -117,7 +117,7 @@ local function BonesMode()
 	player:resetModel();
 	local item = "Skin.Bones"
 	local equip = inv:AddItem(item);
-	equip:getVisual():setTextureChoice(ZombRand(1,25));
+	equip:getVisual():setTextureChoice(ZombRand(1,24));
 	player:setWornItem(equip:getBodyLocation(), equip);
 end
 local function ScareCrowMode()
@@ -144,6 +144,44 @@ local function SpectreMode()
 	local item = "Skin.Bones"
 	local equip = inv:AddItem(item);
 	equip:getVisual():setTextureChoice(25);
+	player:setWornItem(equip:getBodyLocation(), equip);
+end
+
+
+function RA_PrintData()
+	local player = getPlayer() 
+	local modData = player:getModData(); 
+	print('isUndead')
+	modData.isUndead = false
+	print('isBones')
+	modData.isBloody = false
+	print('isBloody')
+	modData.isBloody = false
+	print('isSpectre')
+	modData.isSpectre = false
+	print('isScareCrow')
+	modData.isScareCrow = false
+end
+
+function RA_FlushData()
+	local player = getPlayer() 
+	local modData = player:getModData(); 
+	modData.isBloody = false
+	modData.isSpectre = false
+	modData.isScareCrow = false
+end
+
+local function BloodyMode()
+	local player = getPlayer() 
+	if not  player then return end 	
+	if not player:getModData().isBloody then player:getModData().isBloody = true end
+	local inv = player:getInventory() 
+	player:clearWornItems();
+	inv:clear();
+	player:resetModel();
+	local item = "Skin.Bones"
+	local equip = inv:AddItem(item);
+	equip:getVisual():setTextureChoice(26);
 	player:setWornItem(equip:getBodyLocation(), equip);
 end
 
@@ -200,10 +238,11 @@ function RA_Context(player, context, worldobjects, test)
 		RA_ZedMenu:addOption("setUndead On", worldobjects,  setIsUndead, player )
 	end
 	
-	
 	RA_ZedMenu:addOption("BonesMode", worldobjects, BonesMode, player)
+	RA_ZedMenu:addOption("BloodyMode", worldobjects, BloodyMode, player)
 	RA_ZedMenu:addOption("ScareCrowMode", worldobjects, ScareCrowMode, player)
 	RA_ZedMenu:addOption("SpectreMode", worldobjects, SpectreMode, player)
+	RA_ZedMenu:addOption("Print RA ModData", worldobjects, RA_FlushData, player)
 
 end
 Events.OnFillWorldObjectContextMenu.Add(RA_Context)
