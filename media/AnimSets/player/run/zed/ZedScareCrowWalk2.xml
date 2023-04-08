@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <animNode>
-	<m_Name>zombieWalkSlow2</m_Name>
-	<m_AnimName>zombieWalkSlow2</m_AnimName>
+	<m_Name>ZedScareCrowWalk2</m_Name>
+	<m_AnimName>ZedScareCrowWalk2</m_AnimName>
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
 	<m_SpeedScale>0.92</m_SpeedScale>
 	<m_BlendTime>0.50</m_BlendTime>
 	<m_Scalar>WalkInjury</m_Scalar>
 	<m_Scalar2>WalkSpeed</m_Scalar2>
 	<m_Conditions>
-		<m_Name>isUndead</m_Name>
+		<m_Name>isScareCrow</m_Name>
 		<m_Type>BOOL</m_Type>
 		<m_BoolValue>true</m_BoolValue>
 	</m_Conditions>

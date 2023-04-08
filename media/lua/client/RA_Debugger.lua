@@ -24,7 +24,7 @@ end
 
 
 ------------------------               ---------------------------
-local function doRoll(percent) if percent > ZombRand(1, 101) then return true end end 
+local function doRoll(percent) if percent >= ZombRand(1, 101) then return true end end 
 
 ------------------------               ---------------------------
 local ZedType = {
@@ -35,7 +35,7 @@ local ZedType = {
 }
 
 --@Param ZedType string
-local function setZedType(player, ZedTypeString)
+function setZedType(player, ZedTypeString)
 	if not ZedTypeString then player:getModData().isUndead = false return end
 	if not player:getModData().ZedType and player:getModData().isUndead then
 		player:getModData().ZedType = ZedTypeString

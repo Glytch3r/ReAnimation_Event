@@ -1,4 +1,4 @@
---[[ local ClientCommands = {}
+ local ClientCommands = {}
 
 --- Send the blinding effect to another player
 ClientCommands.SendBlind = function(_, args)
@@ -17,7 +17,7 @@ end
 
 
 Events.OnClientCommand.Add(OnClientCommand)
- ]]
+
 --[[ 
 if isClient() then return; end
 
@@ -38,7 +38,6 @@ end)
 Events.OnClientCommand.Add(OnClientCommand)
  ]]
  --written by Pao
---[[ 
 
 if isClient() then return; end
 
@@ -60,8 +59,7 @@ end
 Events.OnInitGlobalModData.Add(Anim_OnInitGlobalModData)
 
 
- ]]
-
+--[[ 
 
 if isClient() then return; end
 
@@ -78,4 +76,4 @@ Events.OnClientCommand.Add(function(module, command, player, args)
 	if Commands[module] and Commands[module][command] then
 	    Commands[module][command](player, args)
 	end
-end)
+end) ]]

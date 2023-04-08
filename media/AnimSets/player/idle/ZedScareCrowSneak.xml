@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animNode>
-	<m_Name>ZedScareCrowIdle</m_Name>
-	<m_AnimName>ZedScareCrowIdle</m_AnimName>
+	<m_Name>ZedScareCrowSneak</m_Name>
+	<m_AnimName>ZedScareCrowSneak</m_AnimName>
 	<m_DeferredBoneName>Translation_Data</m_DeferredBoneName>
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
 	<m_Looped>true</m_Looped>
@@ -12,12 +12,7 @@
 		<m_Type>BOOL</m_Type>
 		<m_BoolValue>true</m_BoolValue>
 	</m_Conditions>	
-	<m_Conditions>
-		<m_Name>isUndead</m_Name>
-		<m_Type>BOOL</m_Type>
-		<m_BoolValue>true</m_BoolValue>
-	</m_Conditions>
-	
+
 	<m_Transitions>
 		<m_Target>turn_idle_sneak</m_Target>
 		<m_blendInTime>0.1</m_blendInTime>

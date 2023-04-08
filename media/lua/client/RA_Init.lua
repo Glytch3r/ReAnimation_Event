@@ -14,8 +14,8 @@ local function InitReanimation()
 	if not player:getModData().isScareCrow then
 		player:getModData().isScareCrow = false
 	end
-	if not player:getModData().isSpecrte then
-		player:getModData().isSpecrte = false
+	if not player:getModData().isSpectre then
+		player:getModData().isSpectre = false
 	end
 end
 
