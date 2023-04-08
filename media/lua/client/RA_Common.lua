@@ -1,4 +1,4 @@
-
+--[[ 
 ------------------------   z types            ---------------------------
 zedTypes = {
 
@@ -23,19 +23,7 @@ zedTypes = {
 
 
 function playerZedHandler(playerZed)
-	--if not playerZed then return end
-	--disableFallDmg(playerZed)
---	disableMoodle(playerZed)
---[[ 	if isPlayerZed():getModData().isImmortal then
-		ImmortalFunction(playerZed)
-	end
-	if isPlayerZed():getModData().isBomber then
-		BomberFunction(playerZed)
-	end
-	if isPlayerZed():getModData().isBomber then
-		ScareCrowSkill(playerZed)
-	end ]]
-	
+
 end
 Events.OnPlayerUpdate.Remove(playerZedHandler)
 Events.OnPlayerUpdate.Add(playerZedHandler)
@@ -161,3 +149,4 @@ function RAContextFunc(player, context, worldobjects, test)
 end
 Events.OnFillWorldObjectContextMenu.Add(RAContextFunc)
 
+ ]]

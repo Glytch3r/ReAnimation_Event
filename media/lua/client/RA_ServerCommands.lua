@@ -1,4 +1,4 @@
-local ServerCommands = {}
+--[[ local ServerCommands = {}
 
 
 ServerCommands.ReceiveBlind = function(args)
@@ -17,7 +17,7 @@ local function OnServerCommand(module, command, args)
 end
 
 Events.OnServerCommand.Add(OnServerCommand)
-
+ ]]
 
 
 local Commands = {};

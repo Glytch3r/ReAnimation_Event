@@ -38,7 +38,7 @@ end)
 Events.OnClientCommand.Add(OnClientCommand)
  ]]
  --written by Pao
-
+--[[ 
 
 if isClient() then return; end
 
@@ -60,7 +60,7 @@ end
 Events.OnInitGlobalModData.Add(Anim_OnInitGlobalModData)
 
 
-
+ ]]
 
 
 if isClient() then return; end

@@ -3,7 +3,7 @@
 
 
 local function InitReanimation()
-local player = getPlayer()
+	local player = getPlayer()
     -- TODO Setup ModData for player
 
     -- TODO Check if player is already an infected or special zed
