@@ -217,4 +217,4 @@ function RA_ZedKeys(key)
 	end
 end
 
-Events.OnKeyPressed.Add(GlytchMenu);
+Events.OnKeyPressed.Add(RA_ZedKeys);
