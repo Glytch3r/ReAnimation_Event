@@ -42,4 +42,14 @@ module Skin {
 		Icon = Bones_ico,		
 		
 	}		
+	item SkeletonScarecrow
+	{
+       DisplayCategory = Clothing,		
+		Type = Clothing,
+		DisplayName = Scarecrow,
+		ClothingItem = SkeletonScarecrow,
+		BodyLocation = Torso1Legs1, 
+		Icon = Bones_ico,		
+		
+	}		
 }

@@ -16,4 +16,10 @@
 		<path>media/clothing/clothingItems/deformed.xml</path>
 		<guid>c64b0961-6000-4fca-8e66-d0ecbc724c78</guid>
 	</files>
+		<files>
+		<path>media/clothing/clothingItems/SkeletonScarecrow.xml</path>
+		<guid>a2046c0a-8c70-4d04-adfb-2ab87c19d702</guid>
+	</files>
+	
+	    
 </fileGuidTable>

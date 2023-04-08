@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <animNode>
-	<m_Name>Zombie_DoorBang</m_Name>
-	<m_AnimName>Zombie_DoorBang</m_AnimName>
+	<m_Name>ZedScareCrowBite</m_Name>
+	<m_AnimName>ZedScareCrowBite</m_AnimName>
 	<m_Priority>4</m_Priority>
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
 	<m_Looped>false</m_Looped>
@@ -9,9 +9,13 @@
 	<m_EarlyTransitionOut>true</m_EarlyTransitionOut>
 	<m_SpeedScale>1.80</m_SpeedScale>
 	<m_BlendTime>0.20</m_BlendTime>
-	
 	<m_Conditions>
 		<m_Name>isUndead</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_BoolValue>true</m_BoolValue>
+	</m_Conditions>
+	<m_Conditions>
+		<m_Name>isScareCrow</m_Name>
 		<m_Type>BOOL</m_Type>
 		<m_BoolValue>true</m_BoolValue>
 	</m_Conditions>
