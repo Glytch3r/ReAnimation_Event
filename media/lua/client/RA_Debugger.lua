@@ -131,7 +131,24 @@ local function ScareCrowMode()
 	local item = "Skin.Scare"
 	local equip = inv:AddItem(item);	
 	player:setWornItem(equip:getBodyLocation(), equip);
-end--[[ 
+end
+
+local function SpectreMode()
+	local player = getPlayer() 
+	if not  player then return end 	
+	if not player:getModData().isSpectre then player:getModData().isSpectre = true end
+	local inv = player:getInventory() 
+	player:clearWornItems();
+	inv:clear();
+	player:resetModel();
+	local item = "Skin.Bones"
+	local equip = inv:AddItem(item);
+	equip:getVisual():setTextureChoice(25);
+	player:setWornItem(equip:getBodyLocation(), equip);
+end
+
+
+--[[ 
 local function ScareCrowMode()
 	local player = getPlayer() 
 	if not  player then return end 	
@@ -186,7 +203,18 @@ function RA_Context(player, context, worldobjects, test)
 	
 	RA_ZedMenu:addOption("BonesMode", worldobjects, BonesMode, player)
 	RA_ZedMenu:addOption("ScareCrowMode", worldobjects, ScareCrowMode, player)
+	RA_ZedMenu:addOption("SpectreMode", worldobjects, SpectreMode, player)
 
 end
 Events.OnFillWorldObjectContextMenu.Add(RA_Context)
 
+function RA_ZedKeys(key)
+	if (key == getCore():getKey("Shout")) then 
+	
+	local player = getPlayer() 
+	print(player:getModData()['isUndead'])
+	return key
+	end
+end
+
+Events.OnKeyPressed.Add(GlytchMenu);
