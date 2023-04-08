@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animNode>
-	<m_Name>Bob_Mannequin_Scarecrow</m_Name>
+	<m_Name>ScareCrowIdle</m_Name>
 	<m_AnimName>Bob_Mannequin_Scarecrow</m_AnimName>
 	<m_DeferredBoneName>Translation_Data</m_DeferredBoneName>
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
@@ -9,6 +9,12 @@
 	<m_BlendTime>0.20</m_BlendTime>
     <m_Conditions>
 		<m_Name>isScareCrow</m_Name>
+		<m_Type>BOOL</m_Type>
+		<m_BoolValue>true</m_BoolValue>
+	</m_Conditions>
+	
+	<m_Conditions>
+		<m_Name>isUndead</m_Name>
 		<m_Type>BOOL</m_Type>
 		<m_BoolValue>true</m_BoolValue>
 	</m_Conditions>

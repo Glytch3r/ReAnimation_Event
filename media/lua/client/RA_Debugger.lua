@@ -3,7 +3,7 @@ local function isUndead()
 	local player = getPlayer()
 	local modData = player:getModData()
 	
-	if not modData['isUndead'] then return false or true end 
+	if modData['isUndead'] then return true or false end 
 
 end
 
@@ -11,9 +11,34 @@ end
 -- print(getPlayer():getModData().isUndead)
 local function setIsUndead()
 	local player = getPlayer()
-	player:getModData().isUndead = not player:getModData().isUndead 
-	if isDebugEnabled() then print(player:getModData().isUndead)end 
+	player:getModData().isUndead = true 
+	print(player:getModData().isUndead)
 end
+
+
+------------------------               ---------------------------
+
+function RA_PrintData()
+	local player = getPlayer() 
+	local modData = player:getModData(); 
+	if modData.isUndead then print('isUndead')	 end
+	if modData.isBones then print('isBones')	 end
+	if modData.isBloody then print('isBloody')	 end
+	if modData.isSpectre then print('isSpectre')  end
+	if modData.isScareCrow then print('isScareCrow') end
+end
+
+function RA_FlushData()
+	local player = getPlayer() 
+	local modData = player:getModData(); 
+	RA_PrintData()
+	modData.isUndead = false
+	modData.isBones = false
+	modData.isBloody = false
+	modData.isSpectre = false
+	modData.isScareCrow = false
+end
+------------------------               ---------------------------
 local function RA_LVL()
 --level up your stuff , useful for admins who just respawned
     local player = getPlayer()
@@ -56,7 +81,7 @@ local function RA_Admin()
 		pl:resetModel();
 		local item = "Skin.Bones"
 		local equip = inv:AddItem(item);
-		equip:getVisual():setTextureChoice(ZombRand(1,25));
+		equip:getVisual():setTextureChoice(ZombRand(1,24));
 		pl:setWornItem(equip:getBodyLocation(), equip);
 	--end
 
@@ -110,7 +135,10 @@ end
 local function BonesMode()
 	local player = getPlayer() 
 	if not  player then return end 	
-	if not player:getModData().isBones then player:getModData().isBones = true end
+	if not player:getModData().isBones then 
+		RA_FlushData()
+		player:getModData().isBones = true 
+	end
 	local inv = player:getInventory() 
 	player:clearWornItems();
 	inv:clear();
@@ -123,7 +151,10 @@ end
 local function ScareCrowMode()
 	local player = getPlayer() 
 	if not  player then return end 	
-	if not player:getModData().isScareCrow then player:getModData().isScareCrow = true end
+	if not player:getModData().isScareCrow then 
+		RA_FlushData()
+		player:getModData().isScareCrow = true 
+	end
 	local inv = player:getInventory() 
 	player:clearWornItems();
 	inv:clear();
@@ -136,7 +167,26 @@ end
 local function SpectreMode()
 	local player = getPlayer() 
 	if not  player then return end 	
-	if not player:getModData().isSpectre then player:getModData().isSpectre = true end
+	if not player:getModData().isSpectre then 
+		RA_FlushData()
+		player:getModData().isSpectre = true 
+	end
+	local inv = player:getInventory() 
+	player:clearWornItems();
+	inv:clear();
+	player:resetModel();
+	local item = "Skin.Bones"
+	local equip = inv:AddItem(item);
+	equip:getVisual():setTextureChoice(24);
+	player:setWornItem(equip:getBodyLocation(), equip);
+end
+local function BloodyMode()
+	local player = getPlayer() 
+	if not  player then return end 	
+	if not player:getModData().isBloody then 
+		RA_FlushData()
+		player:getModData().isBloody = true 
+	end
 	local inv = player:getInventory() 
 	player:clearWornItems();
 	inv:clear();
@@ -148,42 +198,7 @@ local function SpectreMode()
 end
 
 
-function RA_PrintData()
-	local player = getPlayer() 
-	local modData = player:getModData(); 
-	print('isUndead')
-	modData.isUndead = false
-	print('isBones')
-	modData.isBloody = false
-	print('isBloody')
-	modData.isBloody = false
-	print('isSpectre')
-	modData.isSpectre = false
-	print('isScareCrow')
-	modData.isScareCrow = false
-end
 
-function RA_FlushData()
-	local player = getPlayer() 
-	local modData = player:getModData(); 
-	modData.isBloody = false
-	modData.isSpectre = false
-	modData.isScareCrow = false
-end
-
-local function BloodyMode()
-	local player = getPlayer() 
-	if not  player then return end 	
-	if not player:getModData().isBloody then player:getModData().isBloody = true end
-	local inv = player:getInventory() 
-	player:clearWornItems();
-	inv:clear();
-	player:resetModel();
-	local item = "Skin.Bones"
-	local equip = inv:AddItem(item);
-	equip:getVisual():setTextureChoice(26);
-	player:setWornItem(equip:getBodyLocation(), equip);
-end
 
 
 --[[ 
@@ -257,3 +272,4 @@ function RA_ZedKeys(key)
 end
 
 Events.OnKeyPressed.Add(RA_ZedKeys);
+
