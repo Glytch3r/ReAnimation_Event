@@ -55,6 +55,22 @@ Events.OnPlayerUpdate.Add(function(player)
             end
         end
     end
+    
+    if player:getModData()['isSpectre'] then
+        if player:getVariableBoolean('isSpectre') == false then
+            player:setVariable('isSpectre', 'true');
+            if isClient() then
+                sendClientCommand('Reanimation', 'isSpectre', {isSpectre = true})
+            end
+        end
+    else
+        if player:getVariableBoolean('isSpectre') == true then
+            player:setVariable('isSpectre', 'false');
+            if isClient() then
+                sendClientCommand('Reanimation', 'isSpectre', {isSpectre = false})
+            end
+        end
+    end
 end)
 
 
@@ -81,7 +97,17 @@ Commands.Reanimation.isScareCrow = function(args)
         end
     end
 end
-
+Commands.Reanimation.isSpectre = function(args)
+    local source = getPlayer();
+    local player = getPlayerByOnlineID(args.id)
+    if source ~= player then
+        if args.isSpectre then
+            player:setVariable('isSpectre', 'true');
+        else
+            player:setVariable('isSpectre', 'false');
+        end
+    end
+end
 Events.OnServerCommand.Add(function(module, command, args)
 	if Commands[module] and Commands[module][command] then
 		Commands[module][command](args)
