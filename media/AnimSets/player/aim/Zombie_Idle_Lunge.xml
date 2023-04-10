@@ -3,7 +3,7 @@
 	<m_Name>Zombie_Idle_Lunge</m_Name>
 	<m_AnimName>Zombie_Idle_Lunge</m_AnimName>
 	<m_Conditions>
-		<m_Name>isUndead</m_Name>
+		<m_Name>isBloody</m_Name>
 		<m_Type>BOOL</m_Type>
 		<m_BoolValue>true</m_BoolValue>
 	</m_Conditions>
@@ -21,4 +21,4 @@
 		<boneName>Bip01</boneName>
 		<includeDescendants>false</includeDescendants>
 	</m_SubStateBoneWeights>
-</animNode>ZedSpectreIdle
+</animNode>

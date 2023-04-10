@@ -40,7 +40,11 @@
 <textureChoices>Body\crow\colorful2</textureChoices> 
 <textureChoices>Body\crow\colorful3</textureChoices>
  -->
-<textureChoices>Body\crow\etc1</textureChoices>
+<textureChoices>Body\crow\crow0</textureChoices>
+<textureChoices>Body\crow\crow1</textureChoices>
+<textureChoices>Body\crow\crow2</textureChoices>
+<textureChoices>Body\crow\crow3</textureChoices>
+<textureChoices>Body\crow\crow4</textureChoices>
 <!-- 
 <textureChoices>Body\crow\etc2</textureChoices> 
 <textureChoices>Body\crow\etc3</textureChoices>

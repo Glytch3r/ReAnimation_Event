@@ -204,6 +204,7 @@ local function resetInventory(player)
 	inv:clear();
 	player:resetModel();
 end
+
 ------------------------               ---------------------------
 local function BonesMode()
 	local player = getPlayer() 
@@ -228,7 +229,7 @@ local function ScareCrowMode()
 	end
 	resetInventory(player)
 	local item = "Skin.Scare"
-	wearThis(item)
+	wearThis(item, ZombRand(4))
 end
 
 local function SpectreMode()
@@ -363,7 +364,7 @@ function RA_Context(player, context, worldobjects, test)
 	RA_ZedTypeMenu:addOption("SpectreMode", worldobjects, SpectreMode, player)
 	RA_ZedTypeMenu:addOption("ClownMode", worldobjects, ClownMode, player)
 	RA_ZedTypeMenu:addOption("FatMode", worldobjects, FatMode, player)
-	RA_ZedTypeMenu:addOption("BoomBoomMode", worldobjects, FatMode, player)
+	RA_ZedTypeMenu:addOption("BoomBoomMode", worldobjects, BoomBoomMode, player)
 	if isUndead(player) then 
 		RA_ZedMenu:addOption("setUndead Off", worldobjects,  setIsUndead, player )
 	else 
