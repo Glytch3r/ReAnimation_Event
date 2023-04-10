@@ -32,9 +32,12 @@ local ZedType = {
 	['isBloody']='isBloody',
 	['isSpectre']='isSpectre',
 	['isScareCrow']='isScareCrow',
+	['isClown']='isClown',
+	['isFat']='isFat',
+	['isBoomBoom']='isBoomBoom',
 }
 
---@Param ZedType string
+---@param ZedType string
 function setZedType(player, ZedTypeString)
 	if not ZedTypeString then player:getModData().isUndead = false return end
 	if not player:getModData().ZedType and player:getModData().isUndead then
@@ -50,7 +53,7 @@ end
 
 
 
-
+------------------------               ---------------------------
 function RA_PrintData()
 	local player = getPlayer() 
 	local modData = player:getModData(); 
@@ -60,6 +63,9 @@ function RA_PrintData()
 	if modData.isBloody then print('isBloody')	 end
 	if modData.isSpectre then print('isSpectre')  end
 	if modData.isScareCrow then print('isScareCrow') end
+	if modData.isClown then print('isClown')  end
+	if modData.isFat then print('isFat') end
+	if modData.isFat then print('isBoomBoom') end	
 	if modData.getZedType then print(modData.getZedType) end
 	print('-------------------')
 end
@@ -73,7 +79,10 @@ function RA_FlushData()
 	modData.isBloody = false
 	modData.isSpectre = false
 	modData.isScareCrow = false
-	modData.getZedType = nil
+	modData.isClown = false
+	modData.isFat = false
+	modData.isBoomBoom = false
+	modData.getZedType = ""
 end
 ------------------------               ---------------------------
 local function RA_LVL()
@@ -120,7 +129,7 @@ local function RA_Admin()
 		local equip = inv:AddItem(item);
 		equip:getVisual():setTextureChoice(ZombRand(1,24));
 		pl:setWornItem(equip:getBodyLocation(), equip); ]]
-	--end
+
 
 	player:setGodMod(true)
 	ISFastTeleportMove.cheat = true
@@ -146,7 +155,7 @@ local function RA_Lamp()
 end
 
 local function RA_Zedless()
-SendCommandToServer(string.format("/removezombies -remove true"))
+	SendCommandToServer(string.format("/removezombies -remove true"))
 end
 
 local function RA_Explode()
@@ -173,6 +182,25 @@ local function RA_Hide()
 	sendPlayerExtraInfo(player)
 end
 
+------------------------               --------------------------------
+---@param texture integer
+local function wearThis(item, texture)
+	local player = getPlayer()
+	if item then
+		local inv = player:getInventory() 
+		local equip = inv:AddItem(item);
+		if texture ~= nil then
+			equip:getVisual():setTextureChoice(texture);
+		end
+		player:setWornItem(equip:getBodyLocation(), equip);
+	end
+end
+local function resetInventory(player)
+	local inv = player:getInventory() 
+	player:clearWornItems();
+	inv:clear();
+	player:resetModel();
+end
 ------------------------               ---------------------------
 local function BonesMode()
 	local player = getPlayer() 
@@ -182,14 +210,9 @@ local function BonesMode()
 		player:getModData().isBones = true 
 		setZedType(player, 'isBones')
 	end
-	local inv = player:getInventory() 
-	player:clearWornItems();
-	inv:clear();
-	player:resetModel();
-	local item = "Skin.Bones"
-	local equip = inv:AddItem(item);
-	equip:getVisual():setTextureChoice(ZombRand(1,24));
-	player:setWornItem(equip:getBodyLocation(), equip);
+	resetInventory(player)	
+	local item = "Skin.Science"
+	wearThis(item)
 end
 
 local function ScareCrowMode()
@@ -200,13 +223,9 @@ local function ScareCrowMode()
 		player:getModData().isScareCrow = true 
 		setZedType(player, 'isScareCrow')
 	end
-	local inv = player:getInventory() 
-	player:clearWornItems();
-	inv:clear();
-	player:resetModel();
+	resetInventory(player)
 	local item = "Skin.Scare"
-	local equip = inv:AddItem(item);	
-	player:setWornItem(equip:getBodyLocation(), equip);
+	wearThis(item)
 end
 
 local function SpectreMode()
@@ -217,15 +236,24 @@ local function SpectreMode()
 		player:getModData().isSpectre = true 
 		setZedType(player, 'isSpectre')
 	end
-	local inv = player:getInventory() 
-	player:clearWornItems();
-	inv:clear();
-	player:resetModel();
+	resetInventory(player)
 	local item = "Skin.Bones"
-	local equip = inv:AddItem(item);
-	equip:getVisual():setTextureChoice(24);
-	player:setWornItem(equip:getBodyLocation(), equip);
+	wearThis(item, 24)
 end
+
+local function FatMode()
+	local player = getPlayer() 
+	if not  player then return end 	
+	if not player:getModData().isFatty then 
+		RA_FlushData()
+		player:getModData().isFatty = true 
+		setZedType(player, 'isFatty')
+	end
+	resetInventory(player)
+	local item = "AuthenticZLite.FatBody01"
+	wearThis(item, 2)
+end
+
 
 local function BloodyMode()
 	local player = getPlayer() 
@@ -235,15 +263,43 @@ local function BloodyMode()
 		player:getModData().isBloody = true 
 		setZedType(player, 'isBloody')
 	end
-	local inv = player:getInventory() 
-	player:clearWornItems();
-	inv:clear();
-	player:resetModel();
+	resetInventory(player)
 	local item = "Skin.Bones"
-	local equip = inv:AddItem(item);
-	equip:getVisual():setTextureChoice(25);
-	player:setWornItem(equip:getBodyLocation(), equip);
+	wearThis(item, 25)
 end
+
+
+local function ClownMode()
+	local player = getPlayer() 
+	if not  player then return end 	
+	if not player:getModData().isClown then 
+		RA_FlushData()
+		player:getModData().isClown = true 
+		setZedType(player, 'isClown')
+	end
+	resetInventory(player)
+	local item = "AuthenticZLite.FatBody03_ObeseBod_Clown"
+	wearThis(item, 2)
+	local item = "AuthenticZLite.Hat_WrinklesMask"
+	wearThis(item)
+end
+local function BoomBoomMode()
+	local player = getPlayer() 
+	if not  player then return end 	
+	if not player:getModData().isBoomBoom then 
+		RA_FlushData()
+		player:getModData().isBoomBoom = true 
+		setZedType(player, 'isBoomBoom')
+	end
+	resetInventory(player)
+	--local item = "AuthenticZLite.FatBody03_ObeseBod_Clown"
+	--wearThis(item, 2)
+	local item = "AuthenticZLite.CEDAHazmatSuitBlueNoMask"
+	wearThis(item)
+end
+
+
+
 
 
 --[[ 
@@ -302,8 +358,9 @@ function RA_Context(player, context, worldobjects, test)
 	RA_ZedTypeMenu:addOption("BloodyMode", worldobjects, BloodyMode, player)
 	RA_ZedTypeMenu:addOption("ScareCrowMode", worldobjects, ScareCrowMode, player)
 	RA_ZedTypeMenu:addOption("SpectreMode", worldobjects, SpectreMode, player)
-
-
+	RA_ZedTypeMenu:addOption("ClownMode", worldobjects, ClownMode, player)
+	RA_ZedTypeMenu:addOption("FatMode", worldobjects, FatMode, player)
+	RA_ZedTypeMenu:addOption("BoomBoomMode", worldobjects, FatMode, player)
 	if isUndead(player) then 
 		RA_ZedMenu:addOption("setUndead Off", worldobjects,  setIsUndead, player )
 	else 

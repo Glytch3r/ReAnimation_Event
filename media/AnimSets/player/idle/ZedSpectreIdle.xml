@@ -1,31 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <animNode>
-	<m_Name>ZedScareCrowIdle</m_Name>
-	<m_AnimName>ZedScareCrowIdle</m_AnimName>
+	<m_Name>ZedSpectreIdle</m_Name>
+	<m_AnimName>ZedSpectreIdle</m_AnimName>
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
 	<m_SpeedScale>0.48</m_SpeedScale>
 	<m_BlendTime>0.20</m_BlendTime>
 	<m_Scalar>IdleSpeed</m_Scalar>
 	<m_Scalar2>IdleSpeed</m_Scalar2>
 	<m_Conditions>
-		<m_Name>isScareCrow</m_Name>
+		<m_Name>isSpectre</m_Name>
 		<m_Type>BOOL</m_Type>
 		<m_BoolValue>true</m_BoolValue>
 	</m_Conditions>	
 	<m_2DBlends referenceID="1">
-		<m_AnimName>ZedScareCrowIdle</m_AnimName>
+		<m_AnimName>ZedSpectreIdle</m_AnimName>
 		<m_XPos>0.00</m_XPos>
 		<m_YPos>0.00</m_YPos>
 		<m_SpeedScale>0.80</m_SpeedScale>
 	</m_2DBlends>
 	<m_2DBlends referenceID="2">
-		<m_AnimName>ZedScareCrowIdle</m_AnimName>
+		<m_AnimName>ZedSpectreIdle</m_AnimName>
 		<m_XPos>0.00</m_XPos>
 		<m_YPos>1.00</m_YPos>
 		<m_SpeedScale>0.80</m_SpeedScale>
 	</m_2DBlends>
 	<m_2DBlends referenceID="3">
-		<m_AnimName>ZedScareCrowIdle</m_AnimName>
+		<m_AnimName>ZedSpectreIdle</m_AnimName>
 		<m_XPos>0.00</m_XPos>
 		<m_YPos>0.04</m_YPos>
 		<m_SpeedScale>0.80</m_SpeedScale>

@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animNode>
-	<m_Name>ZedHunchWalk</m_Name>
-	<m_AnimName>ZedHunchWalk</m_AnimName>
+	<m_Name>ZedBonesWalk</m_Name>
+	<m_AnimName>ZedBonesWalk</m_AnimName>
 <!-- 	<m_DeferredBoneName>Translation_Data</m_DeferredBoneName> -->
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
 	<m_Looped>true</m_Looped>
 	<m_SpeedScale>1.5</m_SpeedScale>
 	<m_BlendTime>0.20</m_BlendTime>
-    <m_Conditions>
-		<m_Name>isUndead</m_Name>
-		<m_Type>BOOL</m_Type>
-		<m_BoolValue>true</m_BoolValue>
-	</m_Conditions>
+   
 	<m_Conditions>
 		<m_Name>isBones</m_Name>
 		<m_Type>BOOL</m_Type>
