@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <animNode>
-	<m_Name>Zombie_Idle_Lunge</m_Name>
-	<m_AnimName>Zombie_Idle_Lunge</m_AnimName>
+	<m_Name>ZedSpectreIdle</m_Name>
+	<m_AnimName>ZedSpectreIdle</m_AnimName>
 	<m_Conditions>
-		<m_Name>isUndead</m_Name>
+		<m_Name>isSpectre</m_Name>
 		<m_Type>BOOL</m_Type>
 		<m_BoolValue>true</m_BoolValue>
 	</m_Conditions>
@@ -21,4 +21,4 @@
 		<boneName>Bip01</boneName>
 		<includeDescendants>false</includeDescendants>
 	</m_SubStateBoneWeights>
-</animNode>ZedSpectreIdle
+</animNode>

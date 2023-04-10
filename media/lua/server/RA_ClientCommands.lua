@@ -59,7 +59,7 @@ end
 Events.OnInitGlobalModData.Add(Anim_OnInitGlobalModData)
 
 
---[[ 
+------------------------               ---------------------------
 
 if isClient() then return; end
 
@@ -70,10 +70,36 @@ Commands.Reanimation.isUndead = function(player, args)
     local playerId = player:getOnlineID();
     sendServerCommand('Reanimation', 'isUndead', {id = playerId, isUndead =  args.isUndead})    
 end
-
-
+Commands.Reanimation.isScareCrow = function(player, args)
+    local playerId = player:getOnlineID();
+    sendServerCommand('Reanimation', 'isScareCrow', {id = playerId, isScareCrow =  args.isScareCrow})    
+end
+Commands.Reanimation.isBones = function(player, args)
+    local playerId = player:getOnlineID();
+    sendServerCommand('Reanimation', 'isBones', {id = playerId, isBones =  args.isBones})    
+end
+Commands.Reanimation.isSpectre = function(player, args)
+    local playerId = player:getOnlineID();
+    sendServerCommand('Reanimation', 'isSpectre', {id = playerId, isSpectre =  args.isSpectre})    
+end
+Commands.Reanimation.isBloody = function(player, args)
+    local playerId = player:getOnlineID();
+    sendServerCommand('Reanimation', 'isBloody', {id = playerId, isBloody =  args.isBloody})    
+end
+Commands.Reanimation.isFat = function(player, args)
+    local playerId = player:getOnlineID();
+    sendServerCommand('Reanimation', 'isFat', {id = playerId, isFat =  args.isFat})    
+end
+Commands.Reanimation.isClown = function(player, args)
+    local playerId = player:getOnlineID();
+    sendServerCommand('Reanimation', 'isClown', {id = playerId, isClown =  args.isClown})    
+end
+Commands.Reanimation.isBoomBoom = function(player, args)
+    local playerId = player:getOnlineID();
+    sendServerCommand('Reanimation', 'isBoomBoom', {id = playerId, isBoomBoom =  args.isBoomBoom})    
+end
 Events.OnClientCommand.Add(function(module, command, player, args)
 	if Commands[module] and Commands[module][command] then
 	    Commands[module][command](player, args)
 	end
-end) ]]
+end) 

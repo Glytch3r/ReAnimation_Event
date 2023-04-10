@@ -27,7 +27,9 @@ end
 local function doRoll(percent) if percent >= ZombRand(1, 101) then return true end end 
 
 ------------------------               ---------------------------
-local ZedType = {
+---@param isUndead  is for the lua side. to trigger functions there. (removed the use of this boolean in xmls that are animation related.)
+--TODO server commands needs refactoring
+local ZedTypes = {
 	['isBones']='isBones',
 	['isBloody']='isBloody',
 	['isSpectre']='isSpectre',
@@ -37,14 +39,14 @@ local ZedType = {
 	['isBoomBoom']='isBoomBoom',
 }
 
----@param ZedType string
+---@param ZedTypeString string
 function setZedType(player, ZedTypeString)
 	if not ZedTypeString then player:getModData().isUndead = false return end
 	if not player:getModData().ZedType and player:getModData().isUndead then
 		player:getModData().ZedType = ZedTypeString
 	end
 end
-
+--TODO whenver a special zombie type is set it should always turn on the isUndead
 ------------------------               ---------------------------
 
 
@@ -58,16 +60,17 @@ function RA_PrintData()
 	local player = getPlayer() 
 	local modData = player:getModData(); 
 	print('-------------------')
-	if modData.isUndead then print('isUndead')	 end
-	if modData.isBones then print('isBones')	 end
-	if modData.isBloody then print('isBloody')	 end
-	if modData.isSpectre then print('isSpectre')  end
-	if modData.isScareCrow then print('isScareCrow') end
-	if modData.isClown then print('isClown')  end
-	if modData.isFat then print('isFat') end
-	if modData.isFat then print('isBoomBoom') end	
-	if modData.getZedType then print(modData.getZedType) end
-	print('-------------------')
+
+
+	if modData.isBones then print('isBones'); modData.isUndead = true 
+	elseif modData.isBloody then print('isBloody'); modData.isUndead = true	 
+	elseif modData.isSpectre then print('isSpectre'); modData.isUndead = true 
+	elseif modData.isScareCrow then print('isScareCrow'); modData.isUndead = true 
+	elseif modData.isClown then print('isClown'); modData.isUndead = true  
+	elseif modData.isFat then print('isFat'); modData.isUndead = true
+	elseif modData.isFat then print('isBoomBoom'); modData.isUndead = true
+	end	
+	print('isUndead:');print(modData.isUndead)
 end
 
 function RA_FlushData()

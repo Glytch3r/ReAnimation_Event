@@ -7,13 +7,8 @@
 	<m_Looped>false</m_Looped>
 	<m_SyncTrackingEnabled>false</m_SyncTrackingEnabled>
 	<m_EarlyTransitionOut>true</m_EarlyTransitionOut>
-	<m_SpeedScale>1.80</m_SpeedScale>
-	<m_BlendTime>0.20</m_BlendTime>
-	<m_Conditions>
-		<m_Name>isUndead</m_Name>
-		<m_Type>BOOL</m_Type>
-		<m_BoolValue>true</m_BoolValue>
-	</m_Conditions>
+	<m_SpeedScale>0.80</m_SpeedScale>
+	<m_BlendTime>1.20</m_BlendTime>
 	<m_Conditions>
 		<m_Name>isScareCrow</m_Name>
 		<m_Type>BOOL</m_Type>

@@ -8,24 +8,24 @@
 	<m_Scalar>WalkInjury</m_Scalar>
 	<m_Scalar2>WalkSpeed</m_Scalar2>
 	<m_Conditions>
-		<m_Name>isUndead</m_Name>
+		<m_Name>isBones</m_Name>
 		<m_Type>BOOL</m_Type>
 		<m_BoolValue>true</m_BoolValue>
 	</m_Conditions>
 	<m_2DBlends referenceID="1">
-		<m_AnimName>Bob_Walk</m_AnimName>
+		<m_AnimName>Zombie_Walk4</m_AnimName>
 		<m_XPos>0.00</m_XPos>
 		<m_YPos>0.00</m_YPos>
 		<m_SpeedScale>0.80</m_SpeedScale>
 	</m_2DBlends>
 	<m_2DBlends referenceID="2">
-		<m_AnimName>Bob_WalkLightLimpR</m_AnimName>
+		<m_AnimName>Zombie_Walk4</m_AnimName>
 		<m_XPos>0.50</m_XPos>
 		<m_YPos>0.00</m_YPos>
 		<m_SpeedScale>0.80</m_SpeedScale>
 	</m_2DBlends>
 	<m_2DBlends referenceID="3">
-		<m_AnimName>Bob_WalkLightLimpL</m_AnimName>
+		<m_AnimName>Zombie_Walk4</m_AnimName>
 		<m_XPos>-0.50</m_XPos>
 		<m_YPos>0.00</m_YPos>
 		<m_SpeedScale>0.80</m_SpeedScale>
@@ -37,25 +37,25 @@
 		<m_SpeedScale>0.80</m_SpeedScale>
 	</m_2DBlends>
 	<m_2DBlends referenceID="5">
-		<m_AnimName>Bob_RunLightLimpR</m_AnimName>
+		<m_AnimName>Zombie_Sprint02</m_AnimName>
 		<m_XPos>0.50</m_XPos>
 		<m_YPos>1.00</m_YPos>
 		<m_SpeedScale>0.80</m_SpeedScale>
 	</m_2DBlends>
 	<m_2DBlends referenceID="6">
-		<m_AnimName>Bob_RunLightLimpL</m_AnimName>
+		<m_AnimName>Zombie_Sprint02</m_AnimName>
 		<m_XPos>-0.50</m_XPos>
 		<m_YPos>1.00</m_YPos>
 		<m_SpeedScale>0.80</m_SpeedScale>
 	</m_2DBlends>
 	<m_2DBlends referenceID="7">
-		<m_AnimName>Bob_WalkHeavyLimpR</m_AnimName>
+		<m_AnimName>Zombie_Walk4</m_AnimName>
 		<m_XPos>1.00</m_XPos>
 		<m_YPos>0.00</m_YPos>
 		<m_SpeedScale>0.80</m_SpeedScale>
 	</m_2DBlends>
 	<m_2DBlends referenceID="8">
-		<m_AnimName>Bob_WalkHeavyLimpL</m_AnimName>
+		<m_AnimName>Zombie_Walk4</m_AnimName>
 		<m_XPos>-1.00</m_XPos>
 		<m_YPos>0.00</m_YPos>
 		<m_SpeedScale>0.80</m_SpeedScale>
