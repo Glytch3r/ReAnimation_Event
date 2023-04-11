@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animNode>
 	<m_Name>ZedBonesWalk</m_Name>
-	<m_AnimName>ZedBonesWalk</m_AnimName>
+	<m_AnimName>Zombie_Walk5</m_AnimName>
 <!-- 	<m_DeferredBoneName>Translation_Data</m_DeferredBoneName> -->
 	<m_deferredBoneAxis>Y</m_deferredBoneAxis>
 	<m_Looped>true</m_Looped>

@@ -2,7 +2,7 @@
 -- you can take what you need but ultimately this will serve as a tool
 -- as so this might be a long code but everything should be here  since they are local anyways
 -- we should have a global versions of these things and organized the way you initially planned to 
-
+--a
 if not isDebugEnabled() then return; end 
 
 local function isUndead() 
@@ -186,7 +186,7 @@ local function RA_Hide()
 end
 
 ------------------------               --------------------------------
----@param texture integer
+
 local function wearThis(item, texture)
 	local player = getPlayer()
 	if item then

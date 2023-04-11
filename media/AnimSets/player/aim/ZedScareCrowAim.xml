@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <animNode>
-	<m_Name>ZedBloodyAim</m_Name>
-	<m_AnimName>Zombie_Idle_Lunge</m_AnimName>
+	<m_Name>ZedScareCrowAim</m_Name>
+	<m_AnimName>ZedScareCrowAim</m_AnimName>
 	<m_Conditions>
-		<m_Name>isBloody</m_Name>
+		<m_Name>isScareCrow</m_Name>
 		<m_Type>BOOL</m_Type>
 		<m_BoolValue>true</m_BoolValue>
 	</m_Conditions>

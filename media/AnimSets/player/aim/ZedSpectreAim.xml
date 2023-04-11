@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <animNode>
-	<m_Name>ZedSpectreIdle</m_Name>
-	<m_AnimName>ZedSpectreIdle</m_AnimName>
+	<m_Name>ZedSpectreAim</m_Name>
+	<m_AnimName>ZedSpectreAim</m_AnimName>
 	<m_Conditions>
 		<m_Name>isSpectre</m_Name>
 		<m_Type>BOOL</m_Type>

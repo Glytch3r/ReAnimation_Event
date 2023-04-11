@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <animNode>
 	<m_Name>ZedBloodyAim</m_Name>
-	<m_AnimName>Zombie_Idle_Lunge</m_AnimName>
+	<m_AnimName>ZedBloodyAim</m_AnimName>
 	<m_Conditions>
 		<m_Name>isBloody</m_Name>
 		<m_Type>BOOL</m_Type>
